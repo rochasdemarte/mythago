@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+:root {
+    --bg: #0c0c0c;
+    --high-text: #eaf826;
+    --low-text: #f7e6d0;
+}
+
+* {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* 
+#soon-banner {
+    color: var(--high);
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    inset: 0 0 0 0;
+    background-color: var(--bg);
+    z-index: 99;
+    text-align: center;
+}
+*/
+
+body {
+    font-family: 'Dosis', sans-serif;
+    color: var(--bg);
+    /* background-image: linear-gradient(to top, var(--bg), rgb(0, 0, 0)); */
+    background: var(--bg);
+}
+
+main {
+    border: 1px solid var(--low-text);
+}
+
+input,
+textarea,
+button,
+select,
+a,
+div {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+:focus {
+    outline: none;
+}
+
+
+h1 {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 9vw;
+    color: var(--bg);
+    background-color: var(--bg);
+    text-shadow: -1px -1px 0 var(--high-text), 1px -1px 0 var(--high-text), -1px 1px 0 var(--high-text), 1px 1px 0 var(--high-text);
+}
+
+h2 {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 2.4em;
+    font-weight: lighter;
+    color: var(--low-text);
+}
+
+h3 {
+    font-size: 1.5em;
+    position: fixed;
+    padding: 15px 50px;
+    font-family: "Dela Gothic One", sans-serif;
+    display: inline-block;
+    color: var(--high-text);
+}
+
+p {
+    font-weight: 100;
+    font-size: 1em;
+    text-align: justify;
+}
+
+footer {
+    padding: 10px 0;
+    color: var(--low-text);
+    font-family: "Dela Gothic One", sans-serif;
+    background: var(--bg);
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#banner-logo {
+    margin: 0;
+    width: 50%;
+}
+
+#hero-title {
+    margin: 0;
+    padding-top: 15%;
+    width: 100vw;
+    display: block;
+    height: 100vh;
+    text-align: center;
+    /* background-image: linear-gradient(var(--bg), rgb(0, 0, 0)); */
+    background-color: var(--bg);
+    border: 1px solid var(--low-text);
+}
+
+#hero-title p {
+    margin-bottom: 5%;
+    color: var(--low-text);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#sobre {
+    text-align: justify;
+    /* background-image: linear-gradient(var(--bg), rgb(0, 0, 0)); */
+    background-color: var(--bg);
+    padding: 150px;
+    padding-top: 100px;
+    border: 1px solid var(--low-text);
+}
+
+#sobre h2 {
+    color: var(--low-text);
+}
+
+h2 span {
+    background: linear-gradient(90deg, var(--low-text), var(--low-text)) no-repeat;
+}
+
+#sobre p {
+    margin-top: 50px;
+    color: var(--low-text)
+}
+
+#diretores {
+    padding: 150px 0;
+    border: 1px solid var(--low-text);
+}
+
+#diretores h2 {
+    text-align: right;
+    font-size: 5em;
+    margin: 0 150px 100px 150px;
+    color: var(--bg);
+    text-shadow: -1px -1px 0 var(--high-text), 1px -1px 0 var(--high-text), -1px 1px 0 var(--high-text), 1px 1px 0 var(--high-text);
+}
+
+#diretores p {
+    font-size: 1.2em;
+}
+
+#proj {
+    border: 1px solid var(--low-text);
+    padding: 150px 0;
+    color: var(--bg);
+    background: var(--high-text);
+}
+
+#proj h2 {
+    text-align: left;
+    font-size: 5em;
+    margin: 0 150px 100px 150px;
+    color: var(--bg);
+}
+
+.dir-banner {
+    margin: 0px auto;
+    padding-top: 65px;
+    border: solid 1px var(--low-text);
+    background-color: var(--bg);
+}
+
+.dir-banner-img {
+    object-fit: cover;
+    object-position: 100% 15%;
+    width: 100%;
+    max-height: 150px;
+    filter: grayscale(1) saturate(0.5) contrast(2);
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+.dir-banner:hover .dir-banner-img {
+    filter: grayscale(1) saturate(0.5) contrast(1);
+}
+
+.proj-desc {
+    background-color: var(--bg);
+    max-height: 70px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.proj-desc-text {
+    padding: 25px 150px 50px 150px;
+    text-align: justify;
+    color: var(--low-text);
+}
+
+
+.proj-desc-title {
+    text-transform: uppercase;
+    padding: 15px 150px 0 150px;
+    transition: all 0.2s;
+    color: var(--low-text);
+    position: relative;
+}
+
+.dir-banner:hover .proj-desc-title {
+    color: var(--high-text);
+}
+
+#vimeo-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+#proj iframe {
+    border-radius: 10px;
+}
+
+#soon {
+    padding: 10%;
+    text-align: center;
+    width: 100vw;
+    display: block;
+    color: var(--low-text);
+    object-fit: cover;
+    object-position: 100% 35%;
+
+    border-bottom: 1px solid var(--low-text);
+    border-top: 1px solid var(--low-text);
+    background: var(--high-text);
+    background-image: url("img/mythago_cover_alpha.png");
+
+    /* height: 100%;
+
+    background-attachment: fixed;
+    */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover;  */
+}
+
+#soon p {
+    text-align: center;
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 4em;
+    color: var(--high-text);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: var(--bg);
+}
+
+
+
+nav {
+    border: 1px solid var(--low-text);
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+li {
+    float: right;
+}
+
+li a {
+    border-left: 1px solid var(--low-text);
+    border-right: 1px solid var(--low-text);
+    font-size: 1.2vw;
+    display: block;
+    color: var(--low-text);
+    text-align: center;
+    padding: 15px 50px;
+    text-decoration: none;
+}
+
+#banner-nav-logo {
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    width: 100px;
+    padding: 5px;
+    transform: translateX(-200px);
+    transition: all .2s ease-in;
+}
+
+#contact-btn {
+    color: var(--high-text);
+}
+
+#contact-btn:hover,
+li a:hover {
+    background-color: var(--high-text);
+    color: var(--bg);
+}
+
+#contato {
+    text-align: center;
+    display: flex;
+    padding: 0;
+    border-bottom: 1px solid var(--low-text);
+    background: var(--bg);
+}
+
+.contato-item {
+    font-size: 1vw;
+    padding: 80px 50px 50px 50px;
+    margin: 0 5%;
+    flex: 1;
+    width: 40%;
+}
+
+#mapa {
+    width: 40%;
+    border: none;
+    border-right: 1px solid var(--bg);
+}
+
+.contato-text {
+    text-align: left;
+    margin: 25px 0;
+    color: var(--low-text);
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 2vw;
+}
+
+.email {
+    color: var(--high-text);
+    font-size: 2vw;
+}
+
+#in-btn-container {
+    display: flex;
+}
+
+.in-btn {
+    display: none;
+    font-weight: bold;
+    font-size: 1.6em;
+    cursor: pointer;
+    background-color: var(--bg);
+    color: var(--high-text);
+    border: 1px solid var(--high-text);
+    border-radius: 5px;
+    padding: 10px 0;
+    flex: none;
+    width: 40%;
+    margin: 40px auto;
+}
+
+.in-btn:hover {
+    background-color: var(--high-text);
+    color: var(--bg);
+    border: 1px solid black;
+}
+
+.subtitle-about {
+    font-size: 4vw;
+    color: var(--high-text);
+}
+
+.slogan {
+    font-size: 5vw;
+    text-align: left;
+    text-shadow: none;
+}
+
+.slogan span {
+    background: linear-gradient(90deg, var(--high-text), var(--high-text)) no-repeat;
+}
+
+#pre-slogan {
+    margin: 50px 0 25px 0;
+    font-size: 6vw;
+}
+
+.scroll-reveal span {
+    opacity: 0;
+    color: rgba(0, 0, 0, 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+    transition: background-size cubic-bezier(.1, .5, .5, 1) 0.5s;
+
+    /*
+    animation: scrollReveal linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover 20vh;
+    animation-range-end: cover 30vh; */
+}
+
+/* @keyframes scrollReveal {
+    to {
+        background-size: 100%;
+    }
+} */
+
+.fa {
+    mix-blend-mode: difference;
+    position: fixed;
+    bottom: 50px;
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--high-text);
+    border: 1px solid var(--high-text);
+    z-index: 2;
+}
+
+.fa:hover {
+    color: var(--bg);
+    background: var(--high-text);
+    border: 1px solid var(--bg);
+}
+
+.fa-vimeo {
+    right: 50px;
+}
+
+.fa-instagram {
+    right: 120px;
+}
+
+::selection {
+    background-color: var(--bg);
+    color: var(--high-text);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border: 1px solid var(--bg);
+    box-shadow: inset 0 0 5px var(--bg);
+    background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--high-text);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--low-text);
+    ;
+}
+
+.nav-mobile {
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 40px;
+    height: 7px;
+    border-radius: 30px;
+    border: 1px solid var(--bg);
+    background-color: var(--high-text);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change {
+    transform: rotate(-180deg);
+}
+
+.change .bar1 {
+    transform: translate(0, 14px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+@media only screen and (max-width: 800px) {
+
+    header,
+    ul {
+        height: 0;
+    }
+
+    footer {
+        font-size: 2vw;
+    }
+
+    .fa {
+        bottom: 100px;
+    }
+
+    ul {
+        padding-top: 40%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    li {
+        float: none;
+    }
+
+    li a {
+        font-size: 2.5em;
+    }
+
+    nav {
+        display: none;
+        height: 100%;
+    }
+
+    h1 {
+        font-size: 12vw;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+
+    .nav-mobile {
+        display: inline-block;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+    }
+
+    #hero-title,
+    #soon {
+        border-bottom: solid 2px var(--bg);
+        width: 100%;
+        display: block;
+    }
+
+    #soon {
+        background-size: cover;
+    }
+
+    #hero-title {
+        padding-top: 30vh;
+        height: 100vh;
+    }
+
+    #banner-logo {
+        width: 100%;
+    }
+
+    #banner-nav-logo {
+        display: none;
+    }
+
+    #sobre {
+        padding: 42px;
+        padding-bottom: 142px;
+    }
+
+    h2 {
+        font-size: 8vw;
+    }
+
+    #soon p {
+        font-size: 5em;
+    }
+
+    .subtitle-about {
+        font-size: 10vw;
+        color: var(--high-text);
+    }
+
+    .slogan {
+        font-size: 6vw;
+    }
+
+    #pre-slogan {
+        font-size: 11vw;
+    }
+
+    #diretores p {
+        font-size: 1.4em;
+    }
+
+    #proj h2 {
+        margin: 50px;
+        font-size: 8vw;
+    }
+
+    #diretores h2 {
+        margin: 50px;
+        font-size: 8vw;
+    }
+
+    .proj-desc-title {
+        padding: 25px 50px;
+    }
+
+    .proj-desc-text {
+        padding: 25px 50px;
+    }
+
+    #contato {
+        padding: 10px 0 100px 0;
+        flex-direction: column;
+        border: 1px solid var(--low-text);
+    }
+
+    .contato-item {
+        display: block;
+        margin-bottom: 50px;
+        flex: 1;
+        width: calc(100% - 20px);
+    }
+
+    .contato-text {
+        font-size: 6vw;
+    }
+
+    .email {
+        font-size: 4vw;
+    }
+
+    #mapa {
+        width: 100%;
+        border: none;
+    }
+
+    .in-btn {
+        flex: 1;
+        margin: 40px 0 20px 0;
+    }
+}
